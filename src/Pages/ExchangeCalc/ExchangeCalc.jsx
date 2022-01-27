@@ -13,12 +13,13 @@ const ExchangeCalc = () => {
     (async () => {
       const { currencies } = await getCurrencies();
       const countryValue = currencies[`USD${country}`];
-      setExchangeRate((countryValue).toFixed(2));
+      setExchangeRate(countryValue);
     })();
   }, [exchangeRate, country]);
 
   const handleSelectChange = event => {
     setCountry(event.target.value);
+    setResultValue(false);
   };
 
   const handleFormSubmit = event => {
@@ -44,7 +45,7 @@ const ExchangeCalc = () => {
         </div>
         <div className='exchange__form--box'>
           <span>
-            환율 : {exchangeRate && commaNumber(exchangeRate)} {country}/ USD
+            환율 : {exchangeRate.toFixed(2) && commaNumber(exchangeRate.toFixed(2))} {country}/ USD
           </span>
         </div>
         <div className='exchange__form--box'>
