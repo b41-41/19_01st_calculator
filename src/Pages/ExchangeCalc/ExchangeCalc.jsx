@@ -19,6 +19,7 @@ const ExchangeCalc = () => {
 
   const handleSelectChange = event => {
     setCountry(event.target.value);
+    setResultValue(false);
   };
 
   const handleFormSubmit = event => {
