@@ -18,6 +18,7 @@ const ExchangeCalc = () => {
   }, [exchangeRate, country]);
 
   const handleSelectChange = event => {
+    setResultValue(false);
     setCountry(event.target.value);
     setResultValue(false);
   };
